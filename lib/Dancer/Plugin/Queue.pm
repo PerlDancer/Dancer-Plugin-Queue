@@ -53,7 +53,7 @@ register queue => sub {
     return $queues{$name} = $object;
 };
 
-register_plugin for_versions => [ 1, 2 ];
+register_plugin;
 1;
 
 =for Pod::Coverage method_names_here
@@ -91,8 +91,6 @@ register_plugin for_versions => [ 1, 2 ];
 This module provides a generic interface to a message queue.  Message queue
 implementations must implement the L<Dancer::Plugin::Queue::Role::Queue> role,
 which defines the interface to abstract the specifics of the backend.
-
-This plugin should be compatible with Dancer 1 and Dancer 2.
 
 =head1 CONFIGURATION
 
@@ -147,3 +145,4 @@ message durability, this method may do nothing.
 
 =cut
 
+# vim: ts=4 sts=4 sw=4 et:

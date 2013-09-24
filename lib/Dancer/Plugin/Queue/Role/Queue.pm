@@ -20,21 +20,27 @@ requires 'remove_msg';
 
 =head1 SYNOPSIS
 
-  use Dancer::Plugin::Queue::Role::Queue;
+    package Dancer::Plugin::Queue::MyBackend
+
+    use Moo;
+    with 'Dancer::Plugin::Queue::Role::Queue';
+
+    sub add_msg    { ... }
+
+    sub get_msg    { ... }
+
+    sub remove_msg { ... }
 
 =head1 DESCRIPTION
 
-This module might be cool, but you'd never know it from the lack
-of documentation.
+This role specifies the API required by queue backend implementations.
+The following methods must be provided:
 
-=head1 USAGE
-
-Good luck!
-
-=head1 SEE ALSO
-
-Maybe other modules do related things.
+=for :list
+* add_msg
+* get_msg
+* remove_msg
 
 =cut
 
-# vim: ts=2 sts=2 sw=2 et:
+# vim: ts=4 sts=4 sw=4 et:
